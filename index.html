@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="jquery-center.1.3.js"></script>
+	<script type="text/javascript">
+		$(function() {
+            $("#one").center();
+            $("#two").center({vertical:false});
+            $("#three").center({horizontal:false});
+            
+            $(window).resize(function(){
+                //Animations are possible. Transition period specified in ms.
+                $("#one").center({transition:2000});
+                $("#two").center({vertical:false,transition:2000});
+                $("#three").center({horizontal:false,transition:2000});
+            });
+		});
+	</script>
+</head>
+
+<body>
+	<div id="one">
+        With both no parameters, the element is centered perfectly within its parent element.
+        <div id="two">
+            With {vertical:false} the element is only centered horizontally
+            <div id="three">
+                With {horizontal:false} the element is only centered vertically
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
